@@ -1,0 +1,51 @@
+<div style="text-align: center">
+  <h1>To-Do list com angular</h1>
+
+    <input
+      type="text"
+      [(ngModel)]="tarefa"
+      #input
+      style="padding: 5px;border-radius: 10px;margin: 10px"
+    >
+
+    <button
+      type="button"
+      (click)="adicionar()"
+      class="btn btn-primary btn-sm"
+    >
+      Adicionar
+    </button>
+
+
+  <ul>
+    <li *ngFor="let tarefa of tarefas, let i = index" style="display: flex; margin: 0 auto">
+      <input
+        type="text"
+        [ngModel]="tarefa"
+        #input
+        disabled
+        style="padding: 5px;border-radius: 10px;margin: 10px; width: 90%"
+      >
+
+<!--      {{ tarefa }}-->
+
+      <button
+        type="button"
+        class="btn btn-primary btn-sm"
+        style="margin: 10px"
+      >
+        Editar
+      </button>
+
+      <button
+        type="button"
+        (click)="excluir(i)"
+        class="btn btn-primary btn-sm"
+        style="margin: 10px"
+      >
+        Excluir
+      </button>
+    </li>
+  </ul>
+
+</div>
